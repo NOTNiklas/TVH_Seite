@@ -3,12 +3,28 @@ window.TVH_DATEN = {
   news: [
     
     {
+      datum: "22. März 2026",
+      kategorie: "News",
+      titel: "TVH in der Zeitung RuH 2.0",
+      text: "In einer weiteren Ausgabe der RuH (Rund um Hermeskeil) wird ein Artikel über unseren Saisonverlauf und die Meisterschaft geschrieben.",
+      foto: "Foto · Bericht",
+      link: ""
+    },
+    {
+      datum: "22. März 2026",
+      kategorie: "News",
+      titel: "Meisterschaftstitel gesichert!",
+      text: "Die erste Saison ist rum und der erste Titel ist in der Tasche.",
+      foto: "Foto · Meisterschaftsfeier",
+      link: ""
+    },
+    {
       datum: "07. Februar 2026",
       kategorie: "News",
       titel: "TVH in der Zeitung RuH",
       text: "In der neuen Ausgabe der RuH (Rund um Hermeskeil) wurde uns ein großer Beitrag über das sensationelle Spiel gegen Bad Salzig gewidmet.",
       foto: "Foto · Bericht",
-      link: "berichte/bericht-neue-trikots.html"
+      link: ""
     },
     {
       datum: "07. Februar 2026",
@@ -16,39 +32,47 @@ window.TVH_DATEN = {
       titel: "Sensationelles Ligaspiel unserer Herren",
       text: "In einem unserer bisher wichtigsten Spiele gegen den TV Bad Salzig wurden knallharte Ballwechsel ausgetauscht.",
       foto: "Foto · Spiel5",
-      link: "berichte/bericht-herren1-mendig.html"
+      link: ""
     },
     {
-      datum: "19. Mai 2026",
+      datum: "22. November 2025",
+      kategorie: "Spielbericht",
+      titel: "Zweiter Heimspieltag, erneut zwei Punkte.",
+      text: "Zwei weitere Siege sicherten uns Abstand auf der Tabellenspitze.",
+      foto: "Foto · Spiel4",
+      link: ""
+    },
+    {
+      datum: "08. November 2025",
+      kategorie: "Spielbericht",
+      titel: "Auswärtssieg in Kaisersesch",
+      text: "Einen Monat Pause warf die Herren nicht aus dem Konzept!",
+      foto: "Foto · Spiel3",
+      link: ""
+    },
+    {
+      datum: "20. September 2025",
+      kategorie: "Spielbericht",
+      titel: "Die nächsten drei Punkte auf unserem Konto!",
+      text: "Die Herrenmannschaft kassiert weiterhin Punkte ab. ",
+      foto: "Foto · Spiel2",
+      link: ""
+    },
+    {
+      datum: "13. September 2025",
+      kategorie: "Spielbericht",
+      titel: "Perfekter Saisonstart",
+      text: "Das erste Heimspiel. Zwei Spiele, Zwei Siege!",
+      foto: "Foto · Spiel1",
+      link: ""
+    },
+    {
+      datum: "12. Juli 2025",
       kategorie: "Verein",
-      titel: "Beach-Saison im Freibad eröffnet",
-      text: "Zwei Beachfelder, lockeres Training und Grillen – die Sommerrunde läuft.",
-      foto: "Foto · Beachfeld",
-      link: "berichte/bericht-beach-saison.html"
-    },
-    {
-      datum: "28. Mai 2026",
-      kategorie: "Jugend",
-      titel: "Jugendtraining in Planung – jetzt vormerken",
-      text: "Der TVH plant eine eigene Jugendmannschaft – Interessierte können sich schon vormerken.",
-      foto: "Foto · Jugendtraining",
-      link: "berichte/bericht-jugend-geplant.html"
-    },
-    {
-      datum: "11. Mai 2026",
-      kategorie: "Mixed",
-      titel: "Offener Mixed-Abend lockt neue Gesichter",
-      text: "Volle Halle am Spielabend: Das Mixed Team wächst weiter.",
-      foto: "Foto · Mixed-Spielabend",
-      link: "berichte/bericht-mixed-abend.html"
-    },
-    {
-      datum: "03. Mai 2026",
-      kategorie: "Verein",
-      titel: "Neuer Abteilungsvorstand gewählt",
-      text: "Die Mitgliederversammlung bestätigt das Team und setzt neue Ziele.",
-      foto: "Foto · Mitgliederversammlung",
-      link: "berichte/bericht-vorstand.html"
+      titel: "Neue Herrenmannschaft gemeldet",
+      text: "Eine neue Ära beginnt. Der TVH startet in den Liga Spielbetrieb.",
+      foto: "Foto · Mannschaft",
+      link: ""
     }
   ],
 
