@@ -1,57 +1,5 @@
-/* ==============================================================
-   TVH · ZENTRALE DATEN — HIER ALLES PFLEGEN
-   ==============================================================
-   Diese eine Datei steuert alle wiederkehrenden Inhalte der
-   Website. Etwas hier ändern + speichern = es ändert sich
-   automatisch auf ALLEN Seiten, auf denen es eingebunden ist.
-
-   INHALT
-   1. NEWS      → „Aktuelles" (1. groß + alle als Liste) und die
-                  3 neuesten auf der Startseite. Jede News hat
-                  einen Link zur Berichtseite.
-   2. TRAINING  → alle Trainingszeiten-Tabellen + Footer
-   3. TEAMS     → Kurzinfos auf den Team-Karten
-   4. HALLEN    → Spielstätten auf der Seite „Volleyball"
-   5. TERMINE   → „Heimspiele & Termine" auf der Seite „Aktuelles"
-   6. TICKER    → Laufband ganz oben auf der Startseite
-   7. KONTAKT   → Adresse & Links im Footer (alle Seiten)
-   8. FAQ       → Fragen-Blöcke (Volleyball + Mitglied werden)
-   9. HERREN    → Steckbrief, nächstes Heimspiel, Kader,
-                  Trainerteam, letzte Ergebnisse
-  10. MIXED     → Steckbrief, nächster Spieltermin, Trainerteam
-  11. TARIFE    → Beitrags-Karten auf „Mitglied werden"
-
-   TIPPS
-   – Text immer zwischen die Anführungszeichen "..." schreiben.
-   – Eine Zeile (= ein Eintrag) endet meist mit },
-   – Einträge löschen: die ganze Zeile { ... }, entfernen.
-   – Neue Einträge: eine bestehende Zeile kopieren und anpassen.
-   ============================================================== */
-
 window.TVH_DATEN = {
 
-  /* ============================================================
-     1. NEWS  — der NEUESTE Beitrag steht ganz OBEN.
-     · erscheint groß als Aufmacher auf „Aktuelles"
-     · ALLE Beiträge erscheinen darunter als Liste
-     · die ersten 3 erscheinen zusätzlich auf der Startseite
-
-     Felder:
-       datum     z. B. "22. März 2026"
-       kategorie "News", "Spielbericht", "Jugend", "Verein", "Mixed"
-       titel     Überschrift
-       text      Kurztext (1–2 Sätze) – die Vorschau
-       textLang  (optional) längerer Vorschautext nur für den
-                 großen Aufmacher
-       foto      Beschriftung des Foto-Platzhalters
-       link      Pfad zur Berichtseite, z. B.
-                 "berichte/bericht-herren1-klassenerhalt.html"
-                 Leer lassen ("") = Karte ohne „Weiterlesen".
-
-     HINWEIS: Reihenfolge in dieser Liste = Reihenfolge auf der
-     Seite (oben = neueste). Die Berichtseiten selbst liegen im
-     Ordner „berichte/" und werden dort separat angepasst.
-     ============================================================ */
   news: [
     
     {
@@ -104,49 +52,26 @@ window.TVH_DATEN = {
     }
   ],
 
-  /* ============================================================
-     2. TRAINING — eine Zeile pro Trainingseinheit.
-       tag     "Di", "Mi", ... ("–" für noch ohne Termin)
-       gruppe  "Herren", "Mixed" oder "Jugend" (exakt so)
-       titel   Bezeichnung auf der Teamseite
-       halle   Name der Halle
-       zeit    z. B. "18:30 – 22:00"
-       hinweis (optional) kleiner Zusatz, z. B. "in Planung"
-     ============================================================ */
+
   training: [
     { tag: "Di", gruppe: "Herren", titel: "Hallentraining",   halle: "Gymnasium Hermeskeil",      zeit: "18:30 – 22:00" },
     { tag: "Mi", gruppe: "Mixed",  titel: "Training & Spiel",  halle: "IGS Sporthalle Hermeskeil", zeit: "19:30 – 21:45" },
     { tag: "Do", gruppe: "Mixed",  titel: "Training & Spiel",  halle: "Stadthalle Hermeskeil",     zeit: "19:00 – 22:00" },
     { tag: "Fr", gruppe: "Herren", titel: "Hallentraining",    halle: "Gymnasium Hermeskeil",      zeit: "18:30 – 22:00" },
-    { tag: "–",  gruppe: "Jugend", titel: "Jugendtraining",    halle: "Coming Soon",               zeit: "–", hinweis: "in Planung" }
   ],
 
-  /* ============================================================
-     3. TEAMS — Kurzangabe „Training" auf den Team-Karten.
-     ============================================================ */
+
   teams: {
     herren: "Di + Fr · 18:30 – 22:00",
     mixed:  "Mi + Do · ab 19:00",
-    jugend: "In Planung · Jetzt vormerken"
   },
 
-  /* ============================================================
-     4. HALLEN — Spielstätten-Karten auf der Seite „Volleyball".
-       label, name, adresse, info, foto
-       ghost: true = graues statt rotes Etikett
-     ============================================================ */
   hallen: [
     { label: "Training Herren", name: "Gymnasium Hermeskeil",      adresse: "54411 Hermeskeil",                 info: "Trainingshalle der Herren · dienstags & freitags", foto: "Karte / Foto · Gymnasium" },
     { label: "Training Mixed",  name: "IGS Sporthalle Hermeskeil", adresse: "54411 Hermeskeil",                 info: "Trainingshalle des Mixed Teams · mittwochs",       foto: "Karte / Foto · IGS Sporthalle" },
-    { label: "Heimhalle",       name: "Stadthalle Hermeskeil",     adresse: "Trierer Str., 54411 Hermeskeil",   info: "Mixed-Abend donnerstags · Heimspiele der Herren 1", foto: "Karte / Foto · Stadthalle" }
+    { label: "Training Mixed",       name: "Stadthalle Hermeskeil",     adresse: "Trierer Str., 54411 Hermeskeil",   info: "Trainingshalle des Mixed Teams · donnerstags", foto: "Karte / Foto · Stadthalle" }
   ],
 
-  /* ============================================================
-     5. TERMINE — „Heimspiele & Termine" unter „Aktuelles".
-     ACHTUNG: noch BEISPIELE – bitte echte Termine eintragen.
-     Leere Liste = der Abschnitt wird ausgeblendet.
-       tagNr ("14"), monat ("Jun"), label, titel, ort, zeit
-     ============================================================ */
   termine: [
     { tagNr: "18", monat: "Jun", label: "Mixed · Offener Abend", titel: "Mixed Team · Spielabend für alle", ort: "Stadthalle Hermeskeil", zeit: "19:00" },
     { tagNr: "20", monat: "Jun", label: "Bezirksliga · Heim",    titel: "Herren 1 vs. TV Saarburg",         ort: "Stadthalle Hermeskeil", zeit: "19:00" },
@@ -154,19 +79,16 @@ window.TVH_DATEN = {
     { tagNr: "05", monat: "Jul", label: "Beach · Turnier",       titel: "Hochwald Beach Cup",               ort: "Freibad Hermeskeil",    zeit: "10:00" }
   ],
 
-  /* ============================================================
-     6. TICKER — Laufband oben auf der Startseite.
-     ============================================================ */
+
   ticker: [
+    "    ",
     "Meisterschaft! Herren 1 steigt in die Bezirksliga auf",
     "TVH in der Zeitung RuH – großer Bericht über das Spiel gegen Bad Salzig",
     "Jugendtraining in Planung – jetzt vormerken",
     "Probetraining jederzeit möglich"
   ],
 
-  /* ============================================================
-     7. KONTAKT — Footer auf allen Seiten.
-     ============================================================ */
+
   kontakt: {
     adresse: ["Stadthalle Hermeskeil", "Trierer Str., 54411 Hermeskeil"],
     email: "hallo@tv-hermeskeil.de",
@@ -175,12 +97,6 @@ window.TVH_DATEN = {
     instagramUrl: "https://www.instagram.com/tvh_volleys/"
   },
 
-  /* ============================================================
-     8. FAQ — Fragen-Blöcke. Nach Gruppen sortiert, damit jede
-     Seite ihren passenden Block zeigt und du ihn nur EINMAL
-     pflegst. „training" steht auf Volleyball, „mitglied" auf
-     Mitglied werden. Pro Eintrag: q = Frage, a = Antwort.
-     ============================================================ */
   faq: {
     training: [
       { q: "Kann ich einfach zum Probetraining kommen?", a: "Ja, jederzeit. Schreib uns kurz eine Mail oder komm direkt zur passenden Trainingszeit. Die ersten zwei Einheiten sind kostenlos und unverbindlich." },
@@ -197,55 +113,49 @@ window.TVH_DATEN = {
     ]
   },
 
-  /* ============================================================
-     9. HERREN — Inhalte der Seite „Herren 1".
-     ============================================================ */
+
   herren: {
     /* Steckbrief-Kacheln oben. v darf <em>…</em> enthalten (rot). */
     facts: [
       { k: "Liga",         v: "Bezirksliga" },
-      { k: "Tabellenplatz", v: "<em>3.</em> / 12" },
+      { k: "Tabellenplatz", v: "<em>1.</em> / 10" },
       { k: "Kader",        v: "12 Spieler" },
       { k: "Saison",       v: "2025 / 26" }
     ],
 
     /* Nächstes Heimspiel (mit Countdown).
        iso = Datum/Uhrzeit für den Countdown (Format
-       JJJJ-MM-TTThh:mm:ss). BEISPIEL – echtes Spiel eintragen. */
+       JJJJ-MM-TTThh:mm:ss) */
     nextMatch: {
       ghost:   "VS",
       kicker:  "Nächstes Heimspiel",
-      title:   "TVH Herren 1 <span style=\"color:var(--muted-dark)\">vs.</span> TV Saarburg",
-      meta:    ["Sa · 20. Juni 2026", "19:00 Uhr", "Stadthalle Hermeskeil"],
-      iso:     "2026-06-20T19:00:00",
+      title:   "TV-Hermeskeil <span style=\"color:var(--muted-dark)\">vs.</span> ???",
+      meta:    ["01.09.2026", "19:00 Uhr", "Gymnasium Hermeskeil"],
+      iso:     "2026-09-01T19:00:00",
       endText: "Anpfiff!",
       endSub:  "Viel Erfolg, TVH"
     },
 
-    /* Kader. role (optional) = Sonderrolle wie Kapitän/Libero. */
     roster: [
-      { nr: "1",  name: "Lukas Berg",      role: "Kapitän", pos: "Zuspiel" },
-      { nr: "4",  name: "Jonas Weber",     pos: "Außenangriff" },
-      { nr: "5",  name: "Tim Hofer",       pos: "Diagonal" },
-      { nr: "6",  name: "Niklas Arnold",   pos: "Mittelblock" },
-      { nr: "7",  name: "David Klein",     pos: "Außenangriff" },
-      { nr: "8",  name: "Fabian Krause",   role: "Libero", pos: "Libero" },
-      { nr: "9",  name: "Marco Reuter",    pos: "Mittelblock" },
-      { nr: "10", name: "Sebastian Vogt",  pos: "Zuspiel" },
-      { nr: "11", name: "Philipp Lang",    pos: "Diagonal" },
-      { nr: "12", name: "Daniel Schäfer",  pos: "Außenangriff" },
-      { nr: "14", name: "Erik Brandt",     pos: "Mittelblock" },
-      { nr: "17", name: "Moritz Engel",    pos: "Libero" }
+      { nr: "3",  name: "Robin Wagner",    pos: "Mittelblock" },
+      { nr: "4",  name: "Martin Thömmes",   pos: "Mittelblock" },
+      { nr: "6",  name: "Sebastian Fuchs",   role: "Kapitän/Trainer", pos: "Zuspiel" },
+      { nr: "7",  name: "Alessandro Proietti",    pos: "Diagonalangriff" },
+      { nr: "10", name: "Marco Cretu",    pos: "Außenangriff" },
+      { nr: "11", name: "Niklas Schumm", role: "Co-Trainer"  , pos: "Diagonalangriff" },
+      { nr: "14", name: "Emil Hofmann",     pos: "Außenangriff" },
+      { nr: "18", name: "Jonas Heck",    pos: "Mittelblock" },
+      { nr: "21", name: "Dimitrii Verbin",    pos: "Außenangriff" },
+      { nr: "23", name: "Jeremy Düppre",    pos: "Außen-/Diagonalangriff" },
+      { nr: "46", name: "Jason Bamberger",    pos: "Libero" },
     ],
 
-    /* Trainerteam / Betreuerstab. */
     staff: [
-      { role: "Cheftrainer", name: "Michael Becker", text: "B-Lizenz, seit 2019 an der Linie. Steht für strukturiertes Angriffsspiel und einen variablen Aufschlag." },
-      { role: "Co-Trainer",  name: "Andreas Wolf",   text: "Verantwortlich für Athletik und Videoanalyse – und für die gefürchteten Konditionseinheiten am Donnerstag." },
-      { role: "Teammanager", name: "Stefan Roth",    text: "Kümmert sich um Spielplan, Schiedsrichter und alles, was rund um den Spieltag organisiert werden muss." }
+      { role: "Trainer", name: "Sebastian Fuchs", text: "Durch Spielerfahrung in höheren Ligen und konstanten Weiterbildungen der ideale Trainer." },
+      { role: "Co-Trainer",  name: "Niklas Schumm",   text: "Aufgrund von hoher Motivation und permanentem Kontakt eine gute Unterstützung." },
+      { role: "Social Media Manager", name: "Kristin Wilhelm",    text: "Hält die Social Media Präsenz aktuell und bewirbt den Verein!" }
     ],
 
-    /* Letzte Ergebnisse. erg: "win" = grün, "loss" = rot. */
     results: [
       { datum: "07. Jun", gegner: "TG Konz",     ha: "Auswärts", satz: "3 : 1", erg: "win" },
       { datum: "31. Mai", gegner: "VC Wittlich",  ha: "Heim",     satz: "3 : 0", erg: "win" },
@@ -255,15 +165,12 @@ window.TVH_DATEN = {
     ]
   },
 
-  /* ============================================================
-    10. MIXED — Inhalte der Seite „Mixed Team".
-     ============================================================ */
   mixed: {
     facts: [
       { k: "Spielbetrieb",  v: "Ohne Liga" },
-      { k: "Mitspielende",  v: "<em>14</em> aktiv" },
+      { k: "Mitspielende",  v: "<em>20+  </em> aktiv" },
       { k: "Trainingstage", v: "Mi + Do" },
-      { k: "Modus",         v: "Mixed 3 + 3" }
+      { k: "Modus",         v: "6 gegen 6" }
     ],
 
     /* Nächster Spieltermin (mit Countdown). BEISPIEL. */
@@ -278,34 +185,31 @@ window.TVH_DATEN = {
       endSub:  "Bis gleich in der Halle"
     },
 
-    /* Übungsleiter / Trainerteam. */
+
     staff: [
-      { role: "Übungsleiter",     name: "Andreas Wagner", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
-      { role: "Material & Halle", name: "Kevin Roth",     text: "Kümmert sich um Bälle, Netze und darum, dass die Halle startklar ist." },
-      { role: "Events & Soziales", name: "Sabrina Wolf",  text: "Organisiert Grillabende, das Sommer-Beachturnier und hält die Truppe zusammen." }
+      { role: "Übungsleiter",     name: "Martin Seimez", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
+      { role: "Übungsleiter",     name: "Robin Wagner", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
+      { role: "Übungsleiter",     name: "Sebastian Fuchs", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
+      { role: "Übungsleiter",     name: "Kristin Wilhelm", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
+      { role: "Übungsleiter",     name: "Niklas Schumm", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." },
+      { role: "Übungsleiter",     name: "Alessandro Proietti", text: "Leitet die Spielabende, ist erste Anlaufstelle für Neue und behält den Überblick über die Truppe." }
     ]
   },
 
-  /* ============================================================
-    11. TARIFE — Beitrags-Karten auf „Mitglied werden".
-       name, preis, per, items[], cta{label,href}
-       feat: true = hervorgehobene Karte (volle Farbe + Pfeil)
-       flag: kleines Etikett oben (z. B. "Beliebt"), optional
-     ============================================================ */
   tarife: [
     {
       name: "Jugend & junge Erwachsene", preis: "15 €", per: "pro Quartal · bis 27 Jahre",
-      items: ["Herren- & Mixed-Training", "Ligabetrieb bei den Herren", "Geplante Jugendgruppe inklusive", "Beachfeld im Sommer"],
+      
       cta: { label: "Online beitreten", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     },
     {
-      name: "Erwachsene", preis: "21 €", per: "pro Quartal · ab 27 Jahre", feat: true, flag: "Beliebt",
-      items: ["Herren- & Mixed-Training", "Ligabetrieb bei den Herren", "Vereinsveranstaltungen", "Beachfeld im Sommer"],
+      name: "Erwachsene", preis: "21 €", per: "pro Quartal · ab 27 Jahre", 
+      
       cta: { label: "Online beitreten", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     },
     {
       name: "Familie", preis: "Vergünstigt", per: "verschiedene Familientarife",
-      items: ["Für Eltern + alle Kinder", "Mehrere Kombinationen möglich", "Vergünstigte Konditionen", "Alle Tarife auf KURABU"],
+     
       cta: { label: "Tarife auf KURABU ansehen", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     }
   ]
