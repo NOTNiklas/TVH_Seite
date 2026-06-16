@@ -67,9 +67,9 @@ window.TVH_DATEN = {
   },
 
   hallen: [
-    { label: "Training Herren", name: "Gymnasium Hermeskeil",      adresse: "54411 Hermeskeil",                 info: "Trainingshalle der Herren · dienstags & freitags", foto: "Karte / Foto · Gymnasium" },
-    { label: "Training Mixed",  name: "IGS Sporthalle Hermeskeil", adresse: "54411 Hermeskeil",                 info: "Trainingshalle des Mixed Teams · mittwochs",       foto: "Karte / Foto · IGS Sporthalle" },
-    { label: "Training Mixed",       name: "Stadthalle Hermeskeil",     adresse: "Trierer Str., 54411 Hermeskeil",   info: "Trainingshalle des Mixed Teams · donnerstags", foto: "Karte / Foto · Stadthalle" }
+    { label: "Training Herren", name: "Gymnasium Hermeskeil",  info: "Trainingshalle der Herren", foto: "Karte / Foto · Gymnasium" },
+    { label: "Training Mixed",  name: "IGS Sporthalle Hermeskeil", info: "Trainingshalle des Mixed Teams · mittwochs",       foto: "Karte / Foto · IGS Sporthalle" },
+    { label: "Training Mixed",  name: "Stadthalle Hermeskeil", info: "Trainingshalle des Mixed Teams · donnerstags", foto: "Karte / Foto · Stadthalle" }
   ],
 
   termine: [
@@ -101,7 +101,7 @@ window.TVH_DATEN = {
     training: [
       { q: "Kann ich einfach zum Probetraining kommen?", a: "Ja, jederzeit. Schreib uns kurz eine Mail oder komm direkt zur passenden Trainingszeit. Die ersten zwei Einheiten sind kostenlos und unverbindlich." },
       { q: "Brauche ich Vorerfahrung?", a: "Nein. Wir haben Gruppen für komplette Einsteiger ebenso wie für erfahrene Spielerinnen und Spieler. Sag uns einfach dein Level, dann finden wir die richtige Gruppe." },
-      { q: "Ab welchem Alter kann mein Kind mitmachen?", a: "Eine eigene Jugendmannschaft ist aktuell in Planung (Coming Soon). Schreib uns eine Mail – wir merken dein Kind unverbindlich vor und melden uns, sobald es losgeht." },
+      { q: "Ab welchem Alter kann mein Kind mitmachen?", a: "Generell sind jede Altersgruppen bei uns wilkommen. Da der Altersdurchschnitt ein wenig höher liegt, würden wir das Mixedtraining ab 14 Jahren empfehlen. Herren ab 16." },
       { q: "Was kostet die Mitgliedschaft?", a: "Die Beiträge findest du auf der Seite „Mitglied werden“ – für Kinder, Erwachsene und Familien gibt es jeweils eigene Tarife." },
       { q: "Spielt ihr auch im Sommer?", a: "Ja. Sobald die Hallensaison endet, ziehen wir auf die Beachfelder im Freibad um – lockeres Training, Turniere und Grillabende inklusive." }
     ],
@@ -198,7 +198,7 @@ window.TVH_DATEN = {
 
   tarife: [
     {
-      name: "Jugend & junge Erwachsene", preis: "15 €", per: "pro Quartal · bis 27 Jahre",
+      name: "Jugendliche", preis: "15 €", per: "pro Quartal · bis 27 Jahre",
       
       cta: { label: "Online beitreten", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     },
@@ -208,7 +208,7 @@ window.TVH_DATEN = {
       cta: { label: "Online beitreten", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     },
     {
-      name: "Familie", preis: "Vergünstigt", per: "verschiedene Familientarife",
+      name: "Familie", preis: "Tarife", per: "verschiedene Familientarife",
      
       cta: { label: "Tarife auf KURABU ansehen", href: "https://tv-hermeskeil.kurabu.com/de/join/prelude" }
     }
