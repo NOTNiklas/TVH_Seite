@@ -35,6 +35,14 @@ window.TVH_DATEN = {
       link: ""
     },
     {
+      datum: "01. Januar 2026",
+      kategorie: "Verein",
+      titel: "Die Volleyballabteilung wünscht ein frohes neues Jahr!",
+      text: "",
+      foto: "Foto · NeuJahr",
+      link: ""
+    },
+    {
       datum: "22. November 2025",
       kategorie: "Spielbericht",
       titel: "Zweiter Heimspieltag, erneut zwei Punkte.",
@@ -64,6 +72,14 @@ window.TVH_DATEN = {
       titel: "Perfekter Saisonstart",
       text: "Das erste Heimspiel. Zwei Spiele, Zwei Siege!",
       foto: "Foto · Spiel1",
+      link: ""
+    },
+    {
+      datum: "16. Juli 2025",
+      kategorie: "Verein",
+      titel: "Neue Trikots für unsere Herren!",
+      text: "Für die kommende Saison stellt der Verein in Zusammenarbeit mit SPORTINN ein neues Trikotset.",
+      foto: "Foto · Trikots",
       link: ""
     },
     {
