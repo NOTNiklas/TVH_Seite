@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Herren 1 · TV Hermeskeil</title>
+<meta name="description" content="Herren 1 des TV Hermeskeil – Bezirksliga Rheinland. Kader, Trainerteam, Trainingszeiten, nächstes Spiel und letzte Ergebnisse.">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+
+.qfacts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+@media(max-width:760px){.qfacts{grid-template-columns:repeat(2,1fr)}}
+.qfacts .qf{padding:26px 24px;border-right:1px solid var(--line)}
+.qfacts .qf:last-child{border-right:0}
+@media(max-width:760px){.qfacts .qf:nth-child(2){border-right:0}.qfacts .qf:nth-child(1),.qfacts .qf:nth-child(2){border-bottom:1px solid var(--line)}}
+.qfacts .qf .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.qfacts .qf .v{font-size:clamp(22px,2.4vw,30px);font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-top:8px}
+.qfacts .qf .v em{color:var(--red);font-style:normal}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TV Hermeskeil Startseite">
+        <img src="assets/logo-white.png" alt="TV Hermeskeil Logo">
+        <span class="btxt"><span class="bname">TV Hermeskeil</span><span class="bsub">Abteilung Volleyball</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="volleyball.html">Volleyball</a>
+        <div class="has-dd">
+          <a href="mannschaften.html" aria-current="page" class="dd-toggle">Mannschaften<span class="dd-caret" aria-hidden="true"></span></a>
+          <div class="dropdown" role="menu">
+            <a href="mannschaften.html" role="menuitem"><strong>Alle Mannschaften</strong><span class="dd-sub">Herren 1, Mixed &amp; Jugend</span></a>
+            <a href="herren-1.html" role="menuitem" aria-current="page"><strong>Herren 1</strong><span class="dd-sub">Bezirksliga</span></a>
+            <a href="mixed.html" role="menuitem"><strong>Mixed Team</strong><span class="dd-sub">Freizeitteam · ohne Ligabetrieb</span></a>
+          </div>
+        </div>
+        <a href="aktuelles.html">Aktuelles</a>
+        <a href="mitglied-werden.html">Mitglied werden</a>
+      </div>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Start</a>
+    <a href="volleyball.html">Volleyball</a>
+    <a href="mannschaften.html">Mannschaften</a>
+    <a class="mm-sub" href="herren-1.html">Herren 1</a>
+    <a class="mm-sub" href="mixed.html">Mixed Team</a>
+    <a href="aktuelles.html">Aktuelles</a>
+    <a href="mitglied-werden.html">Mitglied werden</a>
+    <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="ph-stripe" aria-hidden="true"></div>
+  <span class="ghost-mark" aria-hidden="true">H1</span>
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">Start</a> <span>/</span> <a href="mannschaften.html">Mannschaften</a> <span>/</span> <span style="color:#fff">Herren 1</span></div>
+      <span class="tag" style="margin-bottom:4px">Bezirksliga Rheinland</span>
+      <h1>Herren 1.</h1>
+      <p class="lede" style="color:#d9d3cd">Das Aushängeschild der Abteilung. Zwölf Spieler, zwei harte Trainingsabende pro Woche und ein klares Ziel: oben mitspielen und die Stadthalle zum Beben bringen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="qfacts reveal">
+      <div class="qf"><div class="k">Liga</div><div class="v">Bezirksliga</div></div>
+      <div class="qf"><div class="k">Tabellenplatz</div><div class="v"><em>3.</em> / 12</div></div>
+      <div class="qf"><div class="k">Kader</div><div class="v">12 Spieler</div></div>
+      <div class="qf"><div class="k">Saison</div><div class="v">2025 / 26</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="nextmatch reveal">
+      <span class="ghost-mark" aria-hidden="true">VS</span>
+      <div class="nm-in">
+        <div>
+          <span class="kicker kicker--light">Nächstes Heimspiel</span>
+          <h3 style="margin:14px 0 0">TVH Herren 1 <span style="color:var(--muted-dark)">vs.</span> TV Saarburg</h3>
+          <div class="nm-meta">
+            <span>Sa · 14. Juni 2026</span>
+            <span>19:00 Uhr</span>
+            <span>Stadthalle Hermeskeil</span>
+          </div>
+        </div>
+        <div class="count" id="countdown" aria-label="Countdown bis zum nächsten Spiel">
+          <div class="cbox"><strong data-d>–</strong><span>Tage</span></div>
+          <div class="cbox"><strong data-h>–</strong><span>Std</span></div>
+          <div class="cbox"><strong data-m>–</strong><span>Min</span></div>
+          <div class="cbox"><strong data-s>–</strong><span>Sek</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker">Die Mannschaft</span>
+        <h2 style="margin:16px 0 22px">Ein Team,<br>ein Trikot.</h2>
+        <p class="lede" style="color:var(--muted)">Vom langjährigen Routinier bis zum Neuzugang aus dem Probetraining – Herren 1 lebt von einer Mischung aus Erfahrung und Hunger. Auf dem Feld zählt nur das Kollektiv, daneben eine Truppe, die auch nach dem Schlusspfiff zusammenhält.</p>
+        <p class="lede" style="color:var(--muted)">Trainiert wird dienstags und freitags im Gymnasium Hermeskeil. Wer mittrainieren will, ist nach Absprache jederzeit willkommen.</p>
+        <div style="margin-top:26px"><a class="btn" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a></div>
+      </div>
+      <div class="ph reveal" style="aspect-ratio:5/4;border-radius:var(--r-lg)"><span class="ph-tag">Teamfoto · Herren 1</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bone">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="kicker">Kader 2025 / 26</span><h2 style="margin-top:16px">Der Kader.</h2></div>
+      <p style="color:var(--muted);max-width:34ch;margin:0">Zwölf Spieler, fünf Positionen – antippen für das Porträt.</p>
+    </div>
+    <div class="roster reveal">
+      <details><summary><span class="rnum">1</span><span class="rname">Lukas Berg</span><span class="rrole">Kapitän</span><span class="rpos">Zuspiel</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">4</span><span class="rname">Jonas Weber</span><span class="rpos">Außenangriff</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">5</span><span class="rname">Tim Hofer</span><span class="rpos">Diagonal</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">6</span><span class="rname">Niklas Arnold</span><span class="rpos">Mittelblock</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">7</span><span class="rname">David Klein</span><span class="rpos">Außenangriff</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">8</span><span class="rname">Fabian Krause</span><span class="rrole">Libero</span><span class="rpos">Libero</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">9</span><span class="rname">Marco Reuter</span><span class="rpos">Mittelblock</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">10</span><span class="rname">Sebastian Vogt</span><span class="rpos">Zuspiel</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">11</span><span class="rname">Philipp Lang</span><span class="rpos">Diagonal</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">12</span><span class="rname">Daniel Schäfer</span><span class="rpos">Außenangriff</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">14</span><span class="rname">Erik Brandt</span><span class="rpos">Mittelblock</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+      <details><summary><span class="rnum">17</span><span class="rname">Moritz Engel</span><span class="rpos">Libero</span><span class="chev" aria-hidden="true"></span></summary><div class="rport"><div class="ph dark-ph"><span class="ph-tag">Foto · Porträt</span></div></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:36px"><span class="kicker">Betreuerstab</span><h2 style="margin-top:16px">Das Trainerteam.</h2></div>
+    <div class="grid cols-3 reveal">
+      <div class="staffcard"><div class="srole">Cheftrainer</div><h3>Michael Becker</h3><p>B-Lizenz, seit 2019 an der Linie. Steht für strukturiertes Angriffsspiel und einen variablen Aufschlag.</p></div>
+      <div class="staffcard"><div class="srole">Co-Trainer</div><h3>Andreas Wolf</h3><p>Verantwortlich für Athletik und Videoanalyse – und für die gefürchteten Konditionseinheiten am Donnerstag.</p></div>
+      <div class="staffcard"><div class="srole">Teammanager</div><h3>Stefan Roth</h3><p>Kümmert sich um Spielplan, Schiedsrichter und alles, was rund um den Spieltag organisiert werden muss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bone">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="kicker">Saisonverlauf</span><h2 style="margin-top:16px">Letzte Ergebnisse.</h2></div>
+      <a class="btn btn--outline" href="aktuelles.html">Alle Berichte <span class="arr">→</span></a>
+    </div>
+    <div class="reveal">
+      <details class="collapse">
+        <summary>Letzte fünf Spiele anzeigen <span class="chev" aria-hidden="true"></span></summary>
+        <table class="results">
+        <thead><tr><th>Spieltag</th><th>Gegner</th><th>Heim / Aus</th><th style="text-align:right">Satz-Erg.</th></tr></thead>
+        <tbody>
+          <tr><td>07. Jun</td><td>TG Konz</td><td>Auswärts</td><td class="score win" style="text-align:right">3 : 1</td></tr>
+          <tr><td>31. Mai</td><td>VC Wittlich</td><td>Heim</td><td class="score win" style="text-align:right">3 : 0</td></tr>
+          <tr><td>24. Mai</td><td>TuS Mayen</td><td>Auswärts</td><td class="score loss" style="text-align:right">2 : 3</td></tr>
+          <tr><td>17. Mai</td><td>SV Mendig</td><td>Heim</td><td class="score win" style="text-align:right">3 : 2</td></tr>
+          <tr><td>10. Mai</td><td>TV Bitburg</td><td>Auswärts</td><td class="score loss" style="text-align:right">1 : 3</td></tr>
+        </tbody>
+        </table>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker">Trainingszeiten</span>
+        <h2 style="margin:16px 0 22px">Wann wir<br>trainieren.</h2>
+        <p class="lede" style="color:var(--muted)">Zwei Hallenabende plus eine optionale Athletikeinheit. Neue Spieler kommen einfach 10 Minuten früher – Trikot gibt's später.</p>
+        <div data-daten="training-team" data-team="Herren"></div>
+      </div>
+      <div class="ph reveal" style="aspect-ratio:4/5;border-radius:var(--r-lg)"><span class="ph-tag">Foto · Training Herren 1</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" style="text-align:center">
+  <div class="wrap" style="max-width:760px">
+    <span class="kicker kicker--light" style="justify-content:center">Mitspielen?</span>
+    <h2 style="margin:18px 0 18px;font-size:clamp(34px,6vw,72px)">Komm ins Team.</h2>
+    <p class="lede" style="margin:0 auto 26px">Du hast Ligaerfahrung oder willst wieder einsteigen? Melde dich für ein Probetraining – wir freuen uns auf dich.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+      <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+      <a class="btn btn--ghost btn--lg" href="mannschaften.html">Alle Mannschaften</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="flogo" src="assets/logo-white.png" alt="TV Hermeskeil">
+        <p style="color:var(--muted-dark);max-width:34ch;margin:0">Turnverein Hermeskeil e.V. – Abteilung Volleyball. Sport, Gemeinschaft und Heimat im Hochwald.</p>
+      </div>
+      <div><h5>Verein</h5><ul><li><a href="volleyball.html">Volleyball</a></li><li><a href="mannschaften.html">Mannschaften</a></li><li><a href="aktuelles.html">Aktuelles</a></li><li><a href="mitglied-werden.html">Mitglied werden</a></li></ul></div>
+      <div><h5>Training</h5><ul data-daten="footer-training"></ul></div>
+      <div><h5>Kontakt</h5><ul data-daten="footer-kontakt"></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 TV Hermeskeil e.V.</span><span style="display:flex;gap:18px"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Satzung</a></span></div>
+  </div>
+</footer>
+
+<script src="assets/daten.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var target=new Date('2026-06-14T19:00:00').getTime();
+  var box=document.getElementById('countdown');
+  if(!box)return;
+  var dEl=box.querySelector('[data-d]'),hEl=box.querySelector('[data-h]'),mEl=box.querySelector('[data-m]'),sEl=box.querySelector('[data-s]');
+  function pad(n){return(n<10?'0':'')+n;}
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){box.innerHTML='<div class="cbox" style="min-width:auto;padding:14px 22px"><strong style="font-size:20px">Anpfiff!</strong><span>Viel Erfolg, TVH</span></div>';return;}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor(diff%86400000/3600000);
+    var m=Math.floor(diff%3600000/60000);
+    var s=Math.floor(diff%60000/1000);
+    dEl.textContent=d;hEl.textContent=pad(h);mEl.textContent=pad(m);sEl.textContent=pad(s);
+    setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

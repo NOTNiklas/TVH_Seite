@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TV Hermeskeil · Volleyball im Hochwald</title>
+<meta name="description" content="Volleyball beim Turnverein Hermeskeil – Herren in der Bezirksliga, offenes Mixed Team und bald auch Jugendtraining. Komm zum Probetraining.">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero .ghost-mark{
+  position:absolute;right:-4%;top:46%;transform:translateY(-50%);
+  font-weight:900;font-size:min(46vw,720px);line-height:.7;letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.06);
+  pointer-events:none;z-index:0;user-select:none;white-space:nowrap;
+}
+.hero-red{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(120deg,var(--red) 0%,var(--red-700) 100%);
+  clip-path:polygon(62% 0,100% 0,100% 100%,42% 100%);
+  opacity:.96;
+}
+@media(max-width:860px){.hero-red{clip-path:polygon(0 78%,100% 62%,100% 100%,0 100%)}}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:center;
+  min-height:min(86vh,820px);padding-block:clamp(48px,7vw,96px)}
+@media(max-width:860px){.hero-inner{min-height:0}}
+.hero h1{font-weight:900;letter-spacing:-.03em;line-height:.88;text-transform:uppercase;
+  font-size:clamp(52px,9.5vw,128px);margin:.2em 0 .4em}
+.hero h1 .dot{color:var(--red)}
+.hero .lede{color:#d9d3cd;max-width:46ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+.ticker{background:var(--red);color:#fff;overflow:hidden;border-bottom:3px solid var(--ink)}
+.ticker .track{display:flex;gap:48px;white-space:nowrap;padding:11px 0;animation:tick 28s linear infinite;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.ticker .track span{display:inline-flex;align-items:center;gap:14px}
+.ticker .track span::after{content:"●";color:rgba(255,255,255,.6);font-size:9px}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:34px 28px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+@media(max-width:760px){.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+.stat .num{font-size:clamp(40px,5vw,60px);font-weight:900;letter-spacing:-.03em;line-height:1}
+.stat .num em{color:var(--red);font-style:normal}
+.stat .lbl{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:8px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.split .ph{aspect-ratio:5/4;border-radius:var(--r-lg)}
+
+.value{padding:30px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);position:relative;overflow:hidden}
+.value .vn{font-size:13px;font-weight:900;color:var(--red);letter-spacing:.1em}
+.value h3{margin:14px 0 10px}
+.value p{color:var(--muted);margin:0;font-size:15.5px}
+.value .bar{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
+.value:hover .bar{transform:scaleY(1)}
+
+.teamcard{position:relative;border-radius:var(--r-lg);overflow:hidden;color:#fff;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:var(--charcoal)}
+.teamcard .ph{position:absolute;inset:0;z-index:0}
+.teamcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(12,11,11,.85) 100%)}
+.teamcard .tc-body{position:relative;z-index:2}
+.teamcard .tag{margin-bottom:10px}
+.teamcard h3{font-size:24px}
+.teamcard .meta{font-size:13px;color:var(--muted-dark);font-weight:600;letter-spacing:.04em;margin-top:6px;text-transform:uppercase}
+
+.sched{width:100%;border-collapse:collapse}
+.sched th{text-align:left;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);font-weight:700;padding:0 0 14px}
+.sched td{padding:18px 0;border-top:1px solid var(--line-dark);font-weight:600;vertical-align:middle}
+.sched .day{font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+.sched .grp{color:#fff}
+.sched .who{color:var(--muted-dark);font-weight:500}
+.sched .tm{font-variant-numeric:tabular-nums;font-weight:800;color:var(--red)}
+
+.news{display:flex;flex-direction:column}
+.news .ph{aspect-ratio:16/10}
+.news .nb{padding:22px 22px 26px}
+.news .nmeta{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:12px}
+.news h3{font-size:20px;text-transform:none;letter-spacing:-.01em;line-height:1.18}
+.news p{color:var(--muted);font-size:15px;margin:10px 0 16px}
+
+.cta-band{position:relative;background:var(--red);color:#fff;overflow:hidden;isolation:isolate}
+.cta-band .ghost-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:900;font-size:min(40vw,560px);color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.16);line-height:.7;z-index:0;pointer-events:none}
+.cta-inner{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px}
+.cta-inner h2{font-size:clamp(38px,7vw,86px)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TV Hermeskeil Startseite">
+        <img src="assets/logo-white.png" alt="TV Hermeskeil Logo">
+        <span class="btxt"><span class="bname">TV Hermeskeil</span><span class="bsub">Abteilung Volleyball</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">Start</a>
+        <a href="volleyball.html">Volleyball</a>
+        <div class="has-dd">
+          <a href="mannschaften.html" class="dd-toggle">Mannschaften<span class="dd-caret" aria-hidden="true"></span></a>
+          <div class="dropdown" role="menu">
+            <a href="mannschaften.html" role="menuitem"><strong>Alle Mannschaften</strong><span class="dd-sub">Herren 1, Mixed &amp; Jugend</span></a>
+            <a href="herren-1.html" role="menuitem"><strong>Herren 1</strong><span class="dd-sub">Bezirksliga</span></a>
+            <a href="mixed.html" role="menuitem"><strong>Mixed Team</strong><span class="dd-sub">Freizeitteam · ohne Ligabetrieb</span></a>
+          </div>
+        </div>
+        <a href="aktuelles.html">Aktuelles</a>
+        <a href="mitglied-werden.html">Mitglied werden</a>
+      </div>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Start</a>
+    <a href="volleyball.html">Volleyball</a>
+    <a href="mannschaften.html">Mannschaften</a>
+    <a class="mm-sub" href="herren-1.html">Herren 1</a>
+    <a class="mm-sub" href="mixed.html">Mixed Team</a>
+    <a href="aktuelles.html">Aktuelles</a>
+    <a href="mitglied-werden.html">Mitglied werden</a>
+    <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track" data-daten="ticker"></div>
+</div>
+
+<section class="hero">
+  <div class="hero-red" aria-hidden="true"></div>
+  <span class="ghost-mark" aria-hidden="true">TVH</span>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <span class="kicker kicker--light">Turnverein Hermeskeil · Hochwald</span>
+        <h1>Volleyball<br>lebt hier<span class="dot">.</span></h1>
+        <p class="lede">Herren in der Bezirksliga, ein offenes Mixed Team und bald auch eine Jugend. Vom ersten Pritschen bis zum Punktspiel – beim TVH findest du dein Team.</p>
+        <div class="hero-actions">
+          <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="mannschaften.html">Mannschaften ansehen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bone">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="num"><em>2</em></div><div class="lbl">Mannschaften</div></div>
+      <div class="stat"><div class="num">50<em>+</em></div><div class="lbl">Jahre Volleyball</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Trainingsabende</div></div>
+      <div class="stat"><div class="num"><em>+</em>1</div><div class="lbl">Jugend in Planung</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker">Willkommen im Verein</span>
+        <h2 style="margin:18px 0 22px">Mehr als ein<br>Spielfeld.</h2>
+        <p class="lede" style="color:var(--muted)">Der TV Hermeskeil ist seit Generationen das sportliche Zuhause im Hochwald. Unsere Volleyball-Abteilung steht für faires, ambitioniertes Spiel – und für eine Gemeinschaft, die nach dem letzten Ballwechsel noch lange zusammensteht.</p>
+        <p class="lede" style="color:var(--muted)">Ob du zum ersten Mal einen Ball berührst oder schon Ligaerfahrung mitbringst: Bei uns bekommst du qualifiziertes Training, echte Mannschaften und eine Halle, die bei jedem Heimspiel bebt.</p>
+        <div style="margin-top:26px"><a class="txtlink" href="volleyball.html">So spielen wir <span class="arr">→</span></a></div>
+      </div>
+      <div class="ph reveal" aria-hidden="true"><span class="ph-tag">Foto · Team-Jubel nach dem Satzgewinn</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="grid cols-3">
+      <div class="value reveal"><span class="bar"></span><div class="vn">01</div><h3>Gemeinschaft</h3><p>Vereinsabende, Auswärtsfahrten und das dritte Halbzeit-Gefühl. Hier kennt man sich – auf und neben dem Feld.</p></div>
+      <div class="value reveal"><span class="bar"></span><div class="vn">02</div><h3>Leistung</h3><p>Lizenzierte Trainer, strukturierte Einheiten und der Ehrgeiz, jedes Jahr ein Stück besser zu werden.</p></div>
+      <div class="value reveal"><span class="bar"></span><div class="vn">03</div><h3>Jugend</h3><p>Der nächste Aufschlag: Eine eigene Jugendmannschaft ist in Planung – Interessierte können sich schon jetzt vormerken.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bone">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px" class="reveal">
+      <div>
+        <span class="kicker">Unsere Teams</span>
+        <h2 style="margin-top:16px">Zwei Teams,<br>ein Verein.</h2>
+      </div>
+      <a class="txtlink" href="mannschaften.html">Alle Mannschaften <span class="arr">→</span></a>
+    </div>
+    <div class="grid cols-3 reveal">
+      <a class="teamcard" href="herren-1.html">
+        <div class="ph dark-ph"><span class="ph-tag">Foto · Herren 1</span></div>
+        <div class="tc-body"><span class="tag">Bezirksliga</span><h3>Herren 1</h3><div class="meta" data-daten="team-kurz" data-team="herren"></div></div>
+      </a>
+      <a class="teamcard" href="mixed.html">
+        <div class="ph dark-ph"><span class="ph-tag">Foto · Mixed Team</span></div>
+        <div class="tc-body"><span class="tag tag--ghost" style="color:#fff;border-color:rgba(255,255,255,.5)">Ohne Ligabetrieb</span><h3>Mixed Team</h3><div class="meta" data-daten="team-kurz" data-team="mixed"></div></div>
+      </a>
+      <a class="teamcard" href="mitglied-werden.html">
+        <div class="ph dark-ph"><span class="ph-tag">Foto folgt · Jugend</span></div>
+        <div class="tc-body"><span class="tag tag--ghost" style="color:#fff;border-color:rgba(255,255,255,.5)">Coming Soon</span><h3>Jugend</h3><div class="meta" data-daten="team-kurz" data-team="jugend"></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker kicker--light">Trainingszeiten</span>
+        <h2 style="margin:16px 0 20px">Komm einfach<br>vorbei.</h2>
+        <p class="lede">Probetraining ist jederzeit möglich – Sportschuhe einpacken und loslegen. Wir trainieren im Gymnasium, in der IGS Sporthalle und in der Stadthalle Hermeskeil.</p>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn btn--lg" href="volleyball.html#zeiten">Alle Zeiten <span class="arr">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="mitglied-werden.html">Probetraining anmelden</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <table class="sched">
+          <thead><tr><th>Tag</th><th>Mannschaft</th><th style="text-align:right">Zeit</th></tr></thead>
+          <tbody data-daten="training-kompakt"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px" class="reveal">
+      <div><span class="kicker">Aktuelles</span><h2 style="margin-top:16px">Neues aus<br>der Halle.</h2></div>
+      <a class="txtlink" href="aktuelles.html">Alle Beiträge <span class="arr">→</span></a>
+    </div>
+    <div class="grid cols-3" data-daten="news-grid" data-limit="3"></div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <span class="ghost-mark" aria-hidden="true">TVH</span>
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <span class="kicker kicker--light">Werde Teil des Teams</span>
+      <h2>Dein Platz<br>ist frei.</h2>
+      <p class="lede" style="color:rgba(255,255,255,.9);max-width:44ch">Erstes Training kostenlos, keine Verpflichtung. Bring Freunde mit – wir freuen uns auf dich.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+        <a class="btn btn--dark btn--lg" href="mitglied-werden.html">Jetzt Mitglied werden <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="aktuelles.html">Termine ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="flogo" src="assets/logo-white.png" alt="TV Hermeskeil">
+        <p style="color:var(--muted-dark);max-width:34ch;margin:0">Turnverein Hermeskeil e.V. – Abteilung Volleyball. Sport, Gemeinschaft und Heimat im Hochwald.</p>
+      </div>
+      <div>
+        <h5>Verein</h5>
+        <ul>
+          <li><a href="volleyball.html">Volleyball</a></li>
+          <li><a href="mannschaften.html">Mannschaften</a></li>
+          <li><a href="aktuelles.html">Aktuelles</a></li>
+          <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Training</h5>
+        <ul data-daten="footer-training"></ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul data-daten="footer-kontakt"></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 TV Hermeskeil e.V.</span>
+      <span style="display:flex;gap:18px"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Satzung</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/daten.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volleyball · TV Hermeskeil</title>
+<meta name="description" content="So spielt der TV Hermeskeil Volleyball: strukturiertes Training, lizenzierte Trainer, Hallen im Hochwald und Beachvolleyball im Sommer.">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.sched-full{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.sched-full th{background:var(--ink);color:#fff;text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:16px 22px}
+.sched-full td{padding:20px 22px;border-top:1px solid var(--line);vertical-align:middle}
+.sched-full .day{font-weight:900;text-transform:uppercase;font-size:18px;letter-spacing:-.01em}
+.sched-full .grp{font-weight:800;font-size:16px}
+.sched-full .hall{color:var(--muted);font-size:14px;font-weight:600}
+.sched-full .tm{font-variant-numeric:tabular-nums;font-weight:900;font-size:17px;color:var(--red);white-space:nowrap}
+.sched-full tr:hover td{background:var(--bone)}
+@media(max-width:680px){
+  .sched-full{display:block}
+  .sched-full thead{display:none}
+  .sched-full tbody{display:block}
+  .sched-full tbody tr{display:grid;grid-template-columns:48px 1fr auto;grid-template-areas:"day grp tm" "day hall hall";column-gap:14px;row-gap:3px;align-items:center;padding:16px 18px;border-top:1px solid var(--line)}
+  .sched-full tbody tr:first-child{border-top:0}
+  .sched-full td{display:block;padding:0;border:0}
+  .sched-full .day{grid-area:day}
+  .sched-full .grp{grid-area:grp;font-size:15px}
+  .sched-full .hall{grid-area:hall;font-size:13px}
+  .sched-full .tm{grid-area:tm;font-size:14px}
+  .sched-full tr:hover td{background:transparent}
+}
+.loc{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:#fff}
+.loc .ph{aspect-ratio:16/9}
+.loc .lc-b{padding:26px}
+.loc h3{font-size:22px}
+.bring li{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-weight:600}
+.bring li .n{flex:none;width:34px;height:34px;border-radius:99px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px}
+.bring{list-style:none;margin:0;padding:0}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="TV Hermeskeil Startseite">
+        <img src="assets/logo-white.png" alt="TV Hermeskeil Logo">
+        <span class="btxt"><span class="bname">TV Hermeskeil</span><span class="bsub">Abteilung Volleyball</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="volleyball.html" aria-current="page">Volleyball</a>
+        <div class="has-dd">
+          <a href="mannschaften.html" class="dd-toggle">Mannschaften<span class="dd-caret" aria-hidden="true"></span></a>
+          <div class="dropdown" role="menu">
+            <a href="mannschaften.html" role="menuitem"><strong>Alle Mannschaften</strong><span class="dd-sub">Herren 1, Mixed &amp; Jugend</span></a>
+            <a href="herren-1.html" role="menuitem"><strong>Herren 1</strong><span class="dd-sub">Bezirksliga</span></a>
+            <a href="mixed.html" role="menuitem"><strong>Mixed Team</strong><span class="dd-sub">Freizeitteam · ohne Ligabetrieb</span></a>
+          </div>
+        </div>
+        <a href="aktuelles.html">Aktuelles</a>
+        <a href="mitglied-werden.html">Mitglied werden</a>
+      </div>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Start</a>
+    <a href="volleyball.html">Volleyball</a>
+    <a href="mannschaften.html">Mannschaften</a>
+    <a class="mm-sub" href="herren-1.html">Herren 1</a>
+    <a class="mm-sub" href="mixed.html">Mixed Team</a>
+    <a href="aktuelles.html">Aktuelles</a>
+    <a href="mitglied-werden.html">Mitglied werden</a>
+    <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="ph-stripe" aria-hidden="true"></div>
+  <span class="ghost-mark" aria-hidden="true">V</span>
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">Start</a> <span>/</span> <span style="color:#fff">Volleyball</span></div>
+      <h1>So spielen<br>wir.</h1>
+      <p class="lede" style="color:#d9d3cd">Vom ersten Pritschen bis zum Matchball in der Bezirksliga – beim TVH wird Volleyball ernst genommen und mit Spaß gelebt. Hier erfährst du, wie unser Training läuft, wo wir spielen und was du mitbringen musst.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker">Unser Spiel</span>
+        <h2 style="margin:16px 0 22px">Technik, Tempo,<br>Teamgeist.</h2>
+        <p class="lede" style="color:var(--muted)">Volleyball ist der schnellste Hallensport im Verein – und der wohl mannschaftlichste. Niemand gewinnt allein. Genau das macht den Reiz aus: präziser Aufschlag, sauberes Zuspiel, der entscheidende Angriff. Bei uns lernst du jedes Element von Grund auf oder feilst an deinem Feinschliff.</p>
+        <p class="lede" style="color:var(--muted)">Unsere Herren spielen im Ligabetrieb des Volleyball-Verbands Rheinland, das Mixed Team trifft sich ohne Ligabetrieb zum festen Spielabend – und im Sommer geht es gemeinsam auf das Beachfeld.</p>
+      </div>
+      <div class="ph reveal" style="aspect-ratio:5/4;border-radius:var(--r-lg)"><span class="ph-tag">Foto · Zuspiel im Training</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bone">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:40px"><span class="kicker">Was dich erwartet</span><h2 style="margin-top:16px">Training mit System.</h2></div>
+    <div class="grid cols-4 reveal">
+      <div class="value" style="border-radius:var(--r-lg)"><span class="bar"></span><div class="vn">01</div><h3 style="font-size:20px">Struktur</h3><p>Aufwärmen, Technik, Spielformen, Match – jede Einheit folgt einem klaren Plan.</p></div>
+      <div class="value" style="border-radius:var(--r-lg)"><span class="bar"></span><div class="vn">02</div><h3 style="font-size:20px">Lizenz-Trainer</h3><p>Unsere Trainerinnen und Trainer sind C- und B-lizenziert und bilden sich laufend weiter.</p></div>
+      <div class="value" style="border-radius:var(--r-lg)"><span class="bar"></span><div class="vn">03</div><h3 style="font-size:20px">Jedes Level</h3><p>Vom Einsteiger-Hobbykurs bis zum Ligakader – du findest die passende Gruppe.</p></div>
+      <div class="value" style="border-radius:var(--r-lg)"><span class="bar"></span><div class="vn">04</div><h3 style="font-size:20px">Beach im Sommer</h3><p>Wenn die Halle ruht, geht's raus: Beachvolleyball auf zwei Feldern im Freibad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="zeiten">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px" class="reveal">
+      <div><span class="kicker">Trainingszeiten</span><h2 style="margin-top:16px">Wann wir<br>auf dem Feld stehen.</h2></div>
+      <a class="btn btn--outline" href="mitglied-werden.html">Probetraining anmelden <span class="arr">→</span></a>
+    </div>
+    <div class="reveal">
+      <table class="sched-full">
+        <thead><tr><th style="width:90px">Tag</th><th>Mannschaft</th><th>Halle</th><th style="text-align:right">Zeit</th></tr></thead>
+        <tbody data-daten="training-voll"></tbody>
+      </table>
+      <p style="color:var(--muted);font-size:14px;margin-top:16px">In den Schulferien kann das Training abweichen. Aktuelle Hinweise findest du unter <a class="txtlink" style="font-size:13px" href="aktuelles.html">Aktuelles <span class="arr">→</span></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section bone">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:36px"><span class="kicker">Spielstätten</span><h2 style="margin-top:16px">Wo wir zuhause sind.</h2></div>
+    <div class="grid cols-3 reveal" data-daten="hallen"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="kicker">Vor dem ersten Training</span>
+        <h2 style="margin:16px 0 22px">Was du<br>mitbringst.</h2>
+        <p class="lede" style="color:var(--muted)">Mehr als das brauchst du nicht – um Ball und Halle kümmern wir uns. Komm einfach 10 Minuten früher, dann zeigen wir dir alles.</p>
+        <div style="margin-top:26px"><a class="btn" href="mitglied-werden.html">Jetzt Probetraining sichern <span class="arr">→</span></a></div>
+      </div>
+      <div class="reveal">
+        <ul class="bring">
+          <li><span class="n">1</span> Saubere Hallenschuhe (helle Sohle)</li>
+          <li><span class="n">2</span> Sportkleidung, in der du dich bewegen kannst</li>
+          <li><span class="n">3</span> Eine gefüllte Trinkflasche</li>
+          <li><span class="n">4</span> Gute Laune – und keine Angst vor dem Ball</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bone">
+  <div class="wrap" style="max-width:880px">
+    <div class="center reveal" style="margin-bottom:32px"><span class="kicker" style="justify-content:center">Häufige Fragen</span><h2 style="margin-top:16px">Gut zu wissen.</h2></div>
+    <div class="acc reveal">
+      <details><summary>Kann ich einfach zum Probetraining kommen?<span class="pm"></span></summary><div class="acc-body">Ja, jederzeit. Schreib uns kurz eine Mail oder komm direkt zur passenden Trainingszeit. Die ersten zwei Einheiten sind kostenlos und unverbindlich.</div></details>
+      <details><summary>Brauche ich Vorerfahrung?<span class="pm"></span></summary><div class="acc-body">Nein. Wir haben Gruppen für komplette Einsteiger ebenso wie für erfahrene Spielerinnen und Spieler. Sag uns einfach dein Level, dann finden wir die richtige Gruppe.</div></details>
+      <details><summary>Ab welchem Alter kann mein Kind mitmachen?<span class="pm"></span></summary><div class="acc-body">Eine eigene Jugendmannschaft ist aktuell in Planung (Coming Soon). Schreib uns eine Mail – wir merken dein Kind unverbindlich vor und melden uns, sobald es losgeht.</div></details>
+      <details><summary>Was kostet die Mitgliedschaft?<span class="pm"></span></summary><div class="acc-body">Die Beiträge findest du auf der Seite „Mitglied werden“ – für Kinder, Erwachsene und Familien gibt es jeweils eigene Tarife.</div></details>
+      <details><summary>Spielt ihr auch im Sommer?<span class="pm"></span></summary><div class="acc-body">Ja. Sobald die Hallensaison endet, ziehen wir auf die Beachfelder im Freibad um – lockeres Training, Turniere und Grillabende inklusive.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" style="text-align:center">
+  <div class="wrap" style="max-width:760px">
+    <span class="kicker kicker--light" style="justify-content:center">Bereit?</span>
+    <h2 style="margin:18px 0 18px;font-size:clamp(34px,6vw,72px)">Dann sehen wir<br>uns in der Halle.</h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+      <a class="btn btn--lg" href="mitglied-werden.html">Probetraining sichern <span class="arr">→</span></a>
+      <a class="btn btn--ghost btn--lg" href="mannschaften.html">Mannschaften ansehen</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="flogo" src="assets/logo-white.png" alt="TV Hermeskeil">
+        <p style="color:var(--muted-dark);max-width:34ch;margin:0">Turnverein Hermeskeil e.V. – Abteilung Volleyball. Sport, Gemeinschaft und Heimat im Hochwald.</p>
+      </div>
+      <div><h5>Verein</h5><ul><li><a href="volleyball.html">Volleyball</a></li><li><a href="mannschaften.html">Mannschaften</a></li><li><a href="aktuelles.html">Aktuelles</a></li><li><a href="mitglied-werden.html">Mitglied werden</a></li></ul></div>
+      <div><h5>Training</h5><ul data-daten="footer-training"></ul></div>
+      <div><h5>Kontakt</h5><ul data-daten="footer-kontakt"></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 TV Hermeskeil e.V.</span><span style="display:flex;gap:18px"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Satzung</a></span></div>
+  </div>
+</footer>
+
+<script src="assets/daten.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
