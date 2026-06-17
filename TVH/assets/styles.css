@@ -166,6 +166,9 @@ p{margin:0 0 1em}
   backdrop-filter:blur(2px);
 }
 .dark-ph .ph-tag{color:var(--muted-dark);background:rgba(0,0,0,.4)}
+.ph .ph-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.art-body blockquote.pull{margin:28px 0;padding:6px 0 6px 26px;border-left:4px solid var(--red);font-size:21px;line-height:1.45;font-weight:600;color:var(--ink)}
+.art-body blockquote.pull cite{display:block;margin-top:12px;font-size:14px;font-weight:700;font-style:normal;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
 
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .2s}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent}

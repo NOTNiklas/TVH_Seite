@@ -77,10 +77,24 @@
       }).join('');
     });
 
+    /* --- Bild-Block: echtes Foto (n.bild) oder Platzhalter (n.foto) --- */
+    function phBlock(n,cls){
+      cls=cls?(' '+cls):'';
+      if(n.bild){
+        return '<div class="ph'+cls+'"><img class="ph-photo" src="'+esc(B+n.bild)+'" alt="'+esc(n.titel||'')+'" loading="lazy"></div>';
+      }
+      return '<div class="ph'+cls+'"><span class="ph-tag">'+esc(n.foto||'Foto')+'</span></div>';
+    }
+    /* --- Link zu einer Berichtsseite (slug) bzw. externer Link --- */
+    function newsHref(n){
+      if(n.slug)return B+'berichte/bericht-'+n.slug+'.html';
+      return n.link?(B+n.link):'';
+    }
+
     /* --- News-Karte --- */
     function newsCard(n){
-      var href=n.link?(B+n.link):'';
-      var inner='<div class="ph"><span class="ph-tag">'+esc(n.foto||'Foto')+'</span></div>'+
+      var href=newsHref(n);
+      var inner=phBlock(n)+
         '<div class="nb"><div class="nmeta"><span class="tag">'+esc(n.kategorie)+'</span><span>'+esc(n.datum)+'</span></div>'+
         '<h3>'+esc(n.titel)+'</h3><p>'+esc(n.text)+'</p>'+
         (href?'<span class="txtlink">Weiterlesen <span class="arr">→</span></span>':'')+'</div>';
@@ -102,8 +116,8 @@
     qa('[data-daten="news-feature"]').forEach(function(el){
       var n=(D.news||[])[0];
       if(!n){el.style.display='none';return;}
-      var href=n.link?(B+n.link):'';
-      el.innerHTML='<div class="ph"><span class="ph-tag">'+esc(n.foto||'Foto')+'</span></div>'+
+      var href=newsHref(n);
+      el.innerHTML=phBlock(n)+
         '<div class="fb"><div style="display:flex;gap:10px;align-items:center"><span class="tag">'+esc(n.kategorie)+'</span><span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)">'+esc(n.datum)+'</span></div>'+
         '<h2>'+esc(n.titel)+'</h2>'+
         '<p style="color:var(--muted);margin:0 0 22px;max-width:54ch">'+esc(n.textLang||n.text)+'</p>'+
@@ -278,7 +292,68 @@
     els.forEach(function(e){io.observe(e)});
   }
 
-  function boot(){initNav();renderDaten();initCountdowns();initFilter();initReveal();}
+  /* ---------- Berichtsseite aus daten.js aufbauen ----------
+     Eine Berichtsseite trägt am Hero  data-artikel="<slug>".
+     Der passende News-Eintrag liefert Tag, Titel, Datum, Bild,
+     Einleitung, Fließtext (inhalt) und die „Weitere Beiträge". */
+  function renderArtikel(){
+    var D=window.TVH_DATEN; if(!D) return;
+    var B=base();
+    var root=document.querySelector('[data-artikel]');
+    if(!root) return;
+    var slug=root.getAttribute('data-artikel');
+    var list=D.news||[];
+    var n=null;
+    for(var i=0;i<list.length;i++){if(list[i].slug===slug){n=list[i];break;}}
+    if(!n){
+      qa('[data-daten="art-hero-inner"]').forEach(function(el){
+        el.innerHTML='<h1>Bericht nicht gefunden</h1>';
+      });
+      return;
+    }
+
+    if(n.titel)document.title='TVH Volleyball | '+n.titel;
+    var metaEl=document.querySelector('meta[name="description"]');
+    if(metaEl&&(n.lead||n.text))metaEl.setAttribute('content',n.lead||n.text);
+
+    function phBlock(item,cls){
+      cls=cls?(' '+cls):'';
+      if(item.bild)return '<div class="ph'+cls+'"><img class="ph-photo" src="'+esc(B+item.bild)+'" alt="'+esc(item.titel||'')+'" loading="lazy"></div>';
+      return '<div class="ph'+cls+'"><span class="ph-tag">'+esc(item.foto||'Foto')+'</span></div>';
+    }
+    function artBody(item){
+      var h='';
+      var lead=item.lead||item.text;
+      if(lead)h+='<p class="lead">'+esc(lead)+'</p>';
+      (item.inhalt||[]).forEach(function(b){
+        if(typeof b==='string'){h+='<p>'+esc(b)+'</p>';}
+        else if(b.h){h+='<h3>'+esc(b.h)+'</h3>';}
+        else if(b.liste){h+='<ul>'+b.liste.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';}
+        else if(b.pull){h+='<blockquote class="pull">'+esc(b.pull)+(b.quelle?'<cite>'+esc(b.quelle)+'</cite>':'')+'</blockquote>';}
+      });
+      return h;
+    }
+
+    qa('[data-daten="art-hero-inner"]').forEach(function(el){
+      el.innerHTML='<div class="crumb"><a href="'+B+'index.html">Start</a> <span>/</span> <a href="'+B+'aktuelles.html">Aktuelles</a> <span>/</span> <span style="color:#fff">'+esc(n.kategorie)+'</span></div>'+
+        '<div class="art-tagrow" style="margin-top:14px"><span class="tag">'+esc(n.kategorie)+'</span><span class="art-date">'+esc(n.datum)+'</span></div>'+
+        '<h1>'+esc(n.titel)+'</h1>';
+    });
+    qa('[data-daten="art-main"]').forEach(function(el){
+      el.innerHTML=phBlock(n,'art-hero-img')+
+        '<div class="art-body">'+artBody(n)+'</div>'+
+        '<div class="art-foot"><a class="txtlink" href="'+B+'aktuelles.html"><span class="arr" style="display:inline-block;transform:rotate(180deg)">→</span> Zurück zu Aktuelles</a><span style="color:var(--muted);font-size:14px;font-weight:600">TV Hermeskeil · Abteilung Volleyball</span></div>';
+    });
+    qa('[data-daten="art-more"]').forEach(function(el){
+      var others=list.filter(function(x){return x.slug&&x.slug!==slug;}).slice(0,3);
+      el.innerHTML=others.map(function(o){
+        return '<a class="card news reveal" href="'+esc(B+'berichte/bericht-'+o.slug+'.html')+'">'+phBlock(o)+
+          '<div class="nb"><div class="nmeta"><span class="tag">'+esc(o.kategorie)+'</span><span>'+esc(o.datum)+'</span></div><h3>'+esc(o.titel)+'</h3><span class="txtlink">Weiterlesen <span class="arr">→</span></span></div></a>';
+      }).join('');
+    });
+  }
+
+  function boot(){initNav();renderDaten();renderArtikel();initCountdowns();initFilter();initReveal();}
   if(document.readyState!=='loading'){boot();}
   else document.addEventListener('DOMContentLoaded',boot);
 })();

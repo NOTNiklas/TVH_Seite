@@ -1,14 +1,39 @@
 window.TVH_DATEN = {
 
+  /* ---------------------------------------------------------------
+     NEWS / BERICHTE  — zentrale Pflege aller Beiträge.
+
+     Jeder Eintrag erscheint als Karte (Start + Aktuelles) und – sobald
+     ein "slug" gesetzt ist – zusätzlich als eigene Berichtsseite
+     berichte/bericht-<slug>.html. ALLE Inhalte dieser Seite (Tag,
+     Titel, Datum, Bild, Text und die "Weitere Beiträge" unten) kommen
+     aus dem jeweiligen Objekt hier – die HTML-Datei ist nur eine
+     leere Vorlage.
+
+       datum     "07. Februar 2026"          Anzeige-Datum
+       kategorie "Spielbericht"              Tag oben (Verein, News, Spielbericht …)
+       titel     "…"                         Überschrift
+       text      "…"                         Vorschautext (Karte) + Einleitung im Bericht
+       foto      "Foto · Spiel5"             Platzhalter-Beschriftung, FALLS kein Bild
+       bild      "berichte/photos/x.jpeg"    echtes Foto, Pfad ab Projekt-Root  ← anpassen!
+       slug      "saisonstart"              erzeugt die Detailseite (optional)
+       lead      "…"                         eigener Einleitungssatz (sonst = text) (optional)
+       inhalt    [ … ]                       Fließtext der Detailseite (optional). Elemente:
+                   "Ein Absatz als Text"
+                   { h: "Zwischenüberschrift" }
+                   { liste: ["Punkt 1", "Punkt 2"] }
+                   { pull: "Hervorgehobenes Zitat", quelle: "Name" }
+     --------------------------------------------------------------- */
   news: [
-    
+
     {
       datum: "22. März 2026",
       kategorie: "News",
       titel: "TVH in der Zeitung RuH 2.0",
       text: "In einer weiteren Ausgabe der RuH (Rund um Hermeskeil) wird ein Artikel über unseren Saisonverlauf und die Meisterschaft geschrieben.",
       foto: "Foto · Bericht",
-      link: ""
+      bild: "berichte/photos/Bericht RuH_2.jpeg",
+      slug: "ruh-2"
     },
     {
       datum: "22. März 2026",
@@ -16,7 +41,31 @@ window.TVH_DATEN = {
       titel: "Meisterschaftstitel gesichert!",
       text: "Die erste Saison ist rum und der erste Titel ist in der Tasche.",
       foto: "Foto · Meisterschaftsfeier",
-      link: ""
+      bild: "assets/Pyramiden Foto.jpeg",
+      slug: "meisterschaft"
+    },
+    {
+      datum: "15. März 2026",
+      kategorie: "Verein",
+      titel: "Mitgliederversammlung: Vorstand neu aufgestellt",
+      text: "Bei der gut besuchten Mitgliederversammlung hat die Abteilung ihren Vorstand neu gewählt und sich klare Ziele gesetzt.",
+      foto: "Foto · Mitgliederversammlung",
+      bild: "assets/2 Reihen Foto.jpeg",
+      slug: "vorstand",
+      lead: "Bei der gut besuchten Mitgliederversammlung hat die Volleyball-Abteilung ihren Vorstand neu aufgestellt und sich ehrgeizige Ziele für die kommenden Jahre gesetzt.",
+      inhalt: [
+        "Die Mitglieder bestätigten ein engagiertes Team, das die Geschicke der Abteilung in den nächsten zwei Jahren lenkt. Schwerpunkte der gemeinsamen Arbeit sollen die Nachwuchsförderung, verlässliche Hallenzeiten und der weitere Ausbau des Beach-Angebots sein.",
+        { h: "Das neue Team" },
+        { liste: [
+          "Abteilungsleitung: Stefan Roth",
+          "Stellvertretung & Sport: Sandra Hoffmann",
+          "Kasse: Petra Adam",
+          "Jugendwart: Jana Berger"
+        ] },
+        "Ein großer Dank ging an die scheidenden Vorstandsmitglieder, die die Abteilung über viele Jahre geprägt und durch herausfordernde Zeiten geführt haben.",
+        { pull: "Wir wollen die Abteilung breiter aufstellen und gleichzeitig sportlich oben dranbleiben.", quelle: "Stefan Roth, Abteilungsleiter" },
+        "Konkrete Projekte sollen schon zur neuen Saison starten."
+      ]
     },
     {
       datum: "07. Februar 2026",
@@ -24,7 +73,8 @@ window.TVH_DATEN = {
       titel: "TVH in der Zeitung RuH",
       text: "In der neuen Ausgabe der RuH (Rund um Hermeskeil) wurde uns ein großer Beitrag über das sensationelle Spiel gegen Bad Salzig gewidmet.",
       foto: "Foto · Bericht",
-      link: ""
+      bild: "berichte/photos/Bericht RuH_1.jpeg",
+      slug: "ruh"
     },
     {
       datum: "07. Februar 2026",
@@ -32,7 +82,8 @@ window.TVH_DATEN = {
       titel: "Sensationelles Ligaspiel unserer Herren",
       text: "In einem unserer bisher wichtigsten Spiele gegen den TV Bad Salzig wurden knallharte Ballwechsel ausgetauscht.",
       foto: "Foto · Spiel5",
-      link: ""
+      bild: "berichte/photos/Spiel 5 Foto.jpeg",
+      slug: "bad-salzig"
     },
     {
       datum: "01. Januar 2026",
@@ -40,7 +91,7 @@ window.TVH_DATEN = {
       titel: "Die Volleyballabteilung wünscht ein frohes neues Jahr!",
       text: "",
       foto: "Foto · NeuJahr",
-      link: ""
+      bild: ""
     },
     {
       datum: "22. November 2025",
@@ -48,7 +99,8 @@ window.TVH_DATEN = {
       titel: "Zweiter Heimspieltag, erneut zwei Punkte.",
       text: "Zwei weitere Siege sicherten uns Abstand auf der Tabellenspitze.",
       foto: "Foto · Spiel4",
-      link: ""
+      bild: "berichte/photos/Spiel 4 Foto.JPG",
+      slug: "heimspieltag-2"
     },
     {
       datum: "08. November 2025",
@@ -56,7 +108,8 @@ window.TVH_DATEN = {
       titel: "Auswärtssieg in Kaisersesch",
       text: "Einen Monat Pause warf die Herren nicht aus dem Konzept!",
       foto: "Foto · Spiel3",
-      link: ""
+      bild: "berichte/photos/Spiel 3 Foto.jpeg",
+      slug: "kaisersesch"
     },
     {
       datum: "20. September 2025",
@@ -64,7 +117,8 @@ window.TVH_DATEN = {
       titel: "Die nächsten drei Punkte auf unserem Konto!",
       text: "Die Herrenmannschaft kassiert weiterhin Punkte ab. ",
       foto: "Foto · Spiel2",
-      link: ""
+      bild: "berichte/photos/Spiel 2 Foto.jpeg",
+      slug: "drei-punkte"
     },
     {
       datum: "13. September 2025",
@@ -72,7 +126,8 @@ window.TVH_DATEN = {
       titel: "Perfekter Saisonstart",
       text: "Das erste Heimspiel. Zwei Spiele, Zwei Siege!",
       foto: "Foto · Spiel1",
-      link: ""
+      bild: "berichte/photos/Spiel 1 Foto.jpeg",
+      slug: "saisonstart"
     },
     {
       datum: "16. Juli 2025",
@@ -80,7 +135,8 @@ window.TVH_DATEN = {
       titel: "Neue Trikots für unsere Herren!",
       text: "Für die kommende Saison stellt der Verein in Zusammenarbeit mit SPORTINN ein neues Trikotset.",
       foto: "Foto · Trikots",
-      link: ""
+      bild: "",
+      slug: "trikots"
     },
     {
       datum: "12. Juli 2025",
@@ -88,7 +144,8 @@ window.TVH_DATEN = {
       titel: "Neue Herrenmannschaft gemeldet",
       text: "Eine neue Ära beginnt. Der TVH startet in den Liga Spielbetrieb.",
       foto: "Foto · Mannschaft",
-      link: ""
+      bild: "assets/Pyramiden Foto - Kopie.jpeg",
+      slug: "neue-mannschaft"
     }
   ],
 
